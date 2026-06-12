@@ -1,0 +1,22 @@
+.grid {
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 60px;
+    max-width: 500px;
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+    flex: 1 0 10px;
+}
+
+.square {
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    max-width: 30px;
+}
+
+button {
+    margin: 30px;
+}

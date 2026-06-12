@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>knit-pattern-writer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="knit.js"></script> 
+    <script src="knit.js" defer></script> 
 </head>
 <body>
     <div class="header">Knit Pattern Writer</div>
-    
+
+    <div class="create-grid">
+        <label for="gridWidth">Grid width:</label>
+        <input type="number" id="gridWidth">
+
+        <label for="gridHeight">Grid height:</label>
+        <input type="number" id="gridHeight">
+
+        <button onclick="createGrid()">Create grid</button>
+    </div>
+
+<!--    <form id="frm1" action="/action_page.php">
+        Grid width: <input type="number" name="gridWidth">
+        Grid height: <input type="number" name="gridHeight">
+        <input type="button" onclick="myFunction()" value="Create grid">
+    </form>
+-->
+
     <div class="grid"></div>
 </body>
 </html>
