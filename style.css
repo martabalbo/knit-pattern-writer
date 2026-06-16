@@ -15,9 +15,10 @@
 
 .column {
     flex-direction: column;
+    max-width: 30px;
     flex: 1 0 10px;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;
+    align-items: center;*/
 }
 
 .square {
