@@ -2,6 +2,10 @@ let grid = document.querySelector(".grid");
 
 function createGrid() {
 
+    // remove previous grid, if any
+
+    removeGrid();
+
     // get user choice for the grid dimensions
 
     const gridWidth = document.getElementById("gridWidth").value;
@@ -19,4 +23,22 @@ function createGrid() {
         }
         grid.appendChild(column);
     };
+
+    // add border
+
+    grid.style.border = "1px solid black";
 };
+
+function clearGrid() {
+
+}
+
+function removeGrid() {
+    if (grid.hasChildNodes()) {
+        const columns = document.querySelectorAll(".column");
+
+        Array.from(columns).forEach((child) => {
+            child.parentNode.removeChild(child);
+        });
+    };
+}
