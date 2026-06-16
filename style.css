@@ -1,5 +1,12 @@
+.header {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(122, 8, 88);
+    color: white;
+}
+
 .grid {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     margin: auto;
     margin-top: 60px;
     max-width: 500px;
@@ -9,6 +16,8 @@
 .column {
     flex-direction: column;
     flex: 1 0 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .square {
@@ -18,5 +27,12 @@
 }
 
 button {
-    margin: 30px;
+    margin: 10px;
 }
+
+label {
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+/to commit: add label and header styling
