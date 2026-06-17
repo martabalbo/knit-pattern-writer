@@ -25,13 +25,8 @@ function createGrid() {
     };
 
     // add border
-
-    grid.style.border = "1px solid black";
+    //grid.style.border = "1px solid black";
 };
-
-function clearGrid() {
-
-}
 
 function removeGrid() {
     if (grid.hasChildNodes()) {
@@ -41,4 +36,8 @@ function removeGrid() {
             child.parentNode.removeChild(child);
         });
     };
-}
+};
+
+function clearGrid() {
+
+};

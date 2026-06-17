@@ -6,25 +6,22 @@
 }
 
 .grid {
-    /*border: 2px solid black;*/
     margin: auto;
     margin-top: 60px;
-    max-width: 500px;
     display: flex;
+    justify-content: center;
 }
 
 .column {
     flex-direction: column;
     max-width: 30px;
     flex: 1 0 10px;
-    /*justify-content: center;
-    align-items: center;*/
 }
 
 .square {
     aspect-ratio: 1/1;
     border: 1px solid black;
-    max-width: 30px;
+    /*max-width: 30px;*/
 }
 
 button {
