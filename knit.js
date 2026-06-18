@@ -1,4 +1,21 @@
+//to do: fix toggle color function (enters the if, but no color)
+
 let grid = document.querySelector(".grid");
+
+function toggleColor() {
+    const squares = document.querySelectorAll(".square");
+    const chosenColor = document.getElementById("chosenColor").value;
+
+    Array.from(squares).forEach((square) => {
+        square.addEventListener('click', (event) => {
+            if (square.style.backgroundColor == chosenColor) {
+                square.style.backgroundColor = "white";
+            } else {
+                square.style.backgroundColor = chosenColor;
+            };
+        });
+    });
+};
 
 function createGrid() {
 
@@ -26,6 +43,10 @@ function createGrid() {
 
     // add border
     //grid.style.border = "1px solid black";
+
+    // add toggle function to color the squares
+
+    toggleColor();
 };
 
 function removeGrid() {
