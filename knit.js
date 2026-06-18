@@ -60,5 +60,8 @@ function removeGrid() {
 };
 
 function clearGrid() {
-
+    const squares = document.querySelectorAll(".square");
+    Array.from(squares).forEach((square) => {
+        square.style.backgroundColor = "white";
+    })
 };
