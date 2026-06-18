@@ -89,5 +89,29 @@ function clearGrid() {
 };
 
 function generatePattern() {
+    const rows = document.querySelectorAll(".row");
+    const chosenColor = document.getElementById("colors").value;
+    const chosenNeedles = document.getElementById("needles").value;
 
+    let pattern = "";
+    let rowNumber = 0;
+
+    Array.from(rows).forEach((row) => {
+        const squares = row.children;
+        
+        let currentRow = [];
+        rowNumber += 1;
+
+        Array.from(squares).forEach((square) => {
+            if (square.style.backgroundColor == chosenColor) {
+                currentRow.push("B");
+            } else {
+                currentRow.push("A");
+            }
+        })
+        if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
+            currentRow.reverse();
+        }
+        console.log(currentRow)
+    })
 }
