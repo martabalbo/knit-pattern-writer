@@ -4,7 +4,7 @@ let grid = document.querySelector(".grid");
 
 function toggleColor() {
     const squares = document.querySelectorAll(".square");
-    const chosenColor = document.getElementById("chosenColor").value;
+    const chosenColor = document.getElementById("colors").value;
 
     Array.from(squares).forEach((square) => {
         square.addEventListener('click', (event) => {
