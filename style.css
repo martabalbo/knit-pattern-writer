@@ -10,17 +10,20 @@
     margin-top: 60px;
     margin-bottom: 60px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.column {
+.row {
     max-width: 30px;
     flex: 1 0 10px;
+    display: flex;
 }
 
 .square {
     aspect-ratio: 1/1;
     border: 1px solid black;
+    flex: 1 0 30px;
     /*max-width: 30px;*/
 }
 
