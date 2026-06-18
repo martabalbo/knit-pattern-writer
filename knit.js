@@ -73,9 +73,9 @@ function createGridByRow() {
 
 function removeGrid() {
     if (grid.hasChildNodes()) {
-        const columns = document.querySelectorAll(".column");
+        const rows = document.querySelectorAll(".row");
 
-        Array.from(columns).forEach((child) => {
+        Array.from(rows).forEach((child) => {
             child.parentNode.removeChild(child);
         });
     };
@@ -104,14 +104,27 @@ function generatePattern() {
 
         Array.from(squares).forEach((square) => {
             if (square.style.backgroundColor == chosenColor) {
-                currentRow.push("B");
+                currentRow.push("1");
             } else {
-                currentRow.push("A");
+                currentRow.push("0");
             }
         })
         if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
             currentRow.reverse();
         }
-        console.log(currentRow)
+
+        currentRow.mergeArray();
     })
+
+    const patternBox = document.querySelector(".pattern");
+    patternBox.textContent = pattern;
 }
+
+// adds all adjacent and equal array elements (ex: [1, 1, 0, 0, 0] becomes [2 color, 3 white])
+function mergeArray() {
+
+}
+
+// add option to use more than one color (up to 5/6?)
+// choose each color (basic colors), name it and draw in the grid
+// generate a pattern with the user's color names
