@@ -6,17 +6,13 @@
 }
 
 .grid {
-    margin: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .row {
     max-width: 30px;
-    flex: 1 0 10px;
     display: flex;
 }
 
