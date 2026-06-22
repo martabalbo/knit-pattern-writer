@@ -97,6 +97,9 @@ function generatePattern() {
     let rowNumber = 0;
 
     Array.from(rows).forEach((row) => {
+
+        // read the grid
+
         const squares = row.children;
         
         let currentRow = [];
@@ -104,26 +107,57 @@ function generatePattern() {
 
         Array.from(squares).forEach((square) => {
             if (square.style.backgroundColor == chosenColor) {
-                currentRow.push("1");
+                currentRow.push("white");
             } else {
-                currentRow.push("0");
+                currentRow.push(chosenColor);
             }
         })
         if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
             currentRow.reverse();
         }
 
-        currentRow.mergeArray();
+        // generate written pattern
+
+        //let mergedRow = []
+        //mergeArray(currentRow, mergedRow);
+
+        // if element of the array is divisible by 2, divide and add to the pattern
     })
 
     const patternBox = document.querySelector(".pattern");
     patternBox.textContent = pattern;
 }
 
-// adds all adjacent and equal array elements (ex: [1, 1, 0, 0, 0] becomes [2 color, 3 white])
-function mergeArray() {
+// adds all adjacent and equal array elements 
+// (ex: [3, 3, 3, 2, 2, 2, 3, 2] becomes [3 color, 3 white, 1 color, 1 white])
+function mergeArray(arr, mergedArr) {
+    //console.log(arr)
+    //console.log(arr.length)
+    if (arr.length == 0) {
+        return;
+    }
+    
+    let temp = [];
+    let i = 0;
+    
+    do {
+        temp.push(arr.shift());
+        i++;
+        //console.log("i=" + i + " temp: " + temp + " arr: " + arr)
+    }
+    while(temp[0]==arr[0]);
 
-}
+    mergedArr.push(temp.reduce(
+        (accumulator, currentValue) => accumulator * currentValue,
+        1,
+    ));
+    mergeArray(arr, mergedArr);
+};
+
+arr = [3, 3, 3];
+mergedArr = []
+mergeArray(arr, mergedArr)
+console.log(mergedArr)
 
 // add option to use more than one color (up to 5/6?)
 // choose each color (basic colors), name it and draw in the grid
