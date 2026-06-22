@@ -92,14 +92,13 @@ function generatePattern() {
     const rows = document.querySelectorAll(".row");
     const chosenColor = document.getElementById("colors").value;
     const chosenNeedles = document.getElementById("needles").value;
+    const patternBox = document.querySelector(".pattern");
 
-    let pattern = "";
     let rowNumber = 0;
 
     Array.from(rows).forEach((row) => {
 
         // read the grid
-
         const squares = row.children;
         
         let currentRow = [];
@@ -107,9 +106,9 @@ function generatePattern() {
 
         Array.from(squares).forEach((square) => {
             if (square.style.backgroundColor == chosenColor) {
-                currentRow.push("white");
+                currentRow.push(3);
             } else {
-                currentRow.push(chosenColor);
+                currentRow.push(2);
             }
         })
         if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
@@ -117,15 +116,28 @@ function generatePattern() {
         }
 
         // generate written pattern
+        let mergedRow = []
+        mergeArray(currentRow, mergedRow);
+        let pattern = "Row " + rowNumber + ": "
 
-        //let mergedRow = []
-        //mergeArray(currentRow, mergedRow);
+        console.log(mergedRow)
+        
+        mergedRow.forEach((element) => {
+            console.log(element)
+            if(element % 2 == 0) {
+                console.log(element/2)
+                pattern += (element/2) + " white, "
+            } else if(element % 3 == 0) {
+                console.log(element/3)
+                pattern += (element/3) + " color, "
+            }
+        }) //nope dovrei dividere per 2 o 3 n volte fino ad arrivare a 1 e poi usare n
+        // prova a fare in modo che mergeArray produca un array ["1", "white", "2", "color"]
+        const rowBox = document.createElement("div");
+        patternBox.appendChild(rowBox);
+        rowBox.textContent = pattern.slice(0, -2);
 
-        // if element of the array is divisible by 2, divide and add to the pattern
     })
-
-    const patternBox = document.querySelector(".pattern");
-    patternBox.textContent = pattern;
 }
 
 // adds all adjacent and equal array elements 
@@ -149,15 +161,10 @@ function mergeArray(arr, mergedArr) {
 
     mergedArr.push(temp.reduce(
         (accumulator, currentValue) => accumulator * currentValue,
-        1,
+        0,
     ));
     mergeArray(arr, mergedArr);
 };
-
-arr = [3, 3, 3];
-mergedArr = []
-mergeArray(arr, mergedArr)
-console.log(mergedArr)
 
 // add option to use more than one color (up to 5/6?)
 // choose each color (basic colors), name it and draw in the grid
