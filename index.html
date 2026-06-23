@@ -6,43 +6,102 @@
     <title>knit-pattern-writer</title>
     <link rel="stylesheet" href="style.css">
     <script src="knit.js" defer></script>
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script type="module" src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="header">Knit Pattern Writer</div>
 
-    <div class="create-grid">
-        <label for="gridWidth">Grid width:</label>
-        <input type="number" id="gridWidth">
+    <div class="sidebar">
+        <div class="grid-dimensions">
+            <label for="gridWidth">Grid width:</label>
+            <input type="number" id="gridWidth">
+        </div>
+        
+        <div class="grid-dimensions">
+             <label for="gridHeight">Grid height:</label>
+            <input type="number" id="gridHeight">
+        </div>
 
-        <label for="gridHeight">Grid height:</label>
-        <input type="number" id="gridHeight">
+        <div class="grid-buttons">
+            <button onclick="createGridByRow()">Create grid</button>
+            <button onclick="clearGrid()">Clear</button>
+        </div>
 
-        <label for="colors">Choose a color:</label>
-        <select name="colors" id="colors">
-            <option value="rgb(0, 15, 137)">Blue</option>
-            <option value="rgb(228, 0, 124)">Pink</option>
-            <option value="rgb(139, 0, 139)">Purple</option>
-            <option value="rgb(248, 186, 1)">Yellow</option>
-            <option value="rgb(124, 220, 35)">Green</option>
-        </select>
 
-        <button onclick="createGridByRow()">Create grid</button>
-        <button onclick="clearGrid()">Clear</button>
+        <div class="choose-colors">Choose up to five colors:
+            <div class="color">
+                <label for="color1">Color 1:</label>
+                <select name="color1" id="color1">
+                    <option value="rgb(0, 15, 137)">Blue</option>
+                    <option value="rgb(228, 0, 124)">Pink</option>
+                    <option value="rgb(139, 0, 139)">Purple</option>
+                    <option value="rgb(248, 186, 1)">Yellow</option>
+                    <option value="rgb(124, 220, 35)">Green</option>
+                </select>
+                <button onclick="colorIn(color1)">Select</button>
+            </div>
+
+            <div class="color">
+                <label for="color2">Color 2:</label>
+                <select name="color2" id="color2">
+                    <option value="rgb(0, 15, 137)">Blue</option>
+                    <option value="rgb(228, 0, 124)">Pink</option>
+                    <option value="rgb(139, 0, 139)">Purple</option>
+                    <option value="rgb(248, 186, 1)">Yellow</option>
+                    <option value="rgb(124, 220, 35)">Green</option>
+                </select>
+                <button onclick="colorIn(color2)">Select</button>
+            </div>
+
+            <div class="color">
+                <label for="color3">Color 3:</label>
+                <select name="color3" id="color3">
+                    <option value="rgb(0, 15, 137)">Blue</option>
+                    <option value="rgb(228, 0, 124)">Pink</option>
+                    <option value="rgb(139, 0, 139)">Purple</option>
+                    <option value="rgb(248, 186, 1)">Yellow</option>
+                    <option value="rgb(124, 220, 35)">Green</option>
+                </select>
+                <button onclick="colorIn(color3)">Select</button>
+            </div>
+
+            <div class="color">
+                <label for="color4">Color 4:</label>
+                <select name="color4" id="color4">
+                    <option value="rgb(0, 15, 137)">Blue</option>
+                    <option value="rgb(228, 0, 124)">Pink</option>
+                    <option value="rgb(139, 0, 139)">Purple</option>
+                    <option value="rgb(248, 186, 1)">Yellow</option>
+                    <option value="rgb(124, 220, 35)">Green</option>
+                </select>
+                <button onclick="colorIn(color4)">Select</button>
+            </div>
+
+            <div class="color">
+                <label for="color5">Color 5:</label>
+                <select name="color5" id="color5">
+                    <option value="rgb(0, 15, 137)">Blue</option>
+                    <option value="rgb(228, 0, 124)">Pink</option>
+                    <option value="rgb(139, 0, 139)">Purple</option>
+                    <option value="rgb(248, 186, 1)">Yellow</option>
+                    <option value="rgb(124, 220, 35)">Green</option>
+                </select>
+                <button onclick="colorIn(color5)">Select</button>
+            </div>
+        </div>
+            <div class="generate-pattern">
+                <label for="needles">Select your needles:</label>
+                    <select name="needles" id="needles">
+                        <option value="straight">Straight needles</option>
+                        <option value="circular">Circular needles</option>
+                    </select>
+
+                <button onclick="generatePattern()">Generate pattern</button>
+                <button onclick="printPattern()">Print pattern</button>
+            </div>
     </div>
 
     <div class="grid"></div>
-
-    <div class="generate-pattern">
-        <label for="needles">Select your needles:</label>
-        <select name="needles" id="needles">
-            <option value="straight">Straight needles</option>
-            <option value="circular">Circular needles</option>
-        </select>
-
-        <button onclick="generatePattern()">Generate pattern</button>
-        <button onclick="printPattern()">Print pattern</button>
-    </div>
 
     <div id="pdf" class="pattern"></div>
 
