@@ -106,9 +106,9 @@ function generatePattern() {
 
         Array.from(squares).forEach((square) => {
             if (square.style.backgroundColor == chosenColor) {
-                currentRow.push(3);
+                currentRow.push("color");
             } else {
-                currentRow.push(2);
+                currentRow.push("white");
             }
         })
         if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
@@ -119,20 +119,15 @@ function generatePattern() {
         let mergedRow = []
         mergeArray(currentRow, mergedRow);
         let pattern = "Row " + rowNumber + ": "
-
-        console.log(mergedRow)
         
         mergedRow.forEach((element) => {
-            console.log(element)
-            if(element % 2 == 0) {
-                console.log(element/2)
-                pattern += (element/2) + " white, "
-            } else if(element % 3 == 0) {
-                console.log(element/3)
-                pattern += (element/3) + " color, "
+            //console.log(element)
+            if(element == "white" || element == "color") {
+                pattern += element + ", "
+            } else {
+                pattern += element + " "
             }
-        }) //nope dovrei dividere per 2 o 3 n volte fino ad arrivare a 1 e poi usare n
-        // prova a fare in modo che mergeArray produca un array ["1", "white", "2", "color"]
+        })
         const rowBox = document.createElement("div");
         patternBox.appendChild(rowBox);
         rowBox.textContent = pattern.slice(0, -2);
@@ -140,11 +135,8 @@ function generatePattern() {
     })
 }
 
-// adds all adjacent and equal array elements 
-// (ex: [3, 3, 3, 2, 2, 2, 3, 2] becomes [3 color, 3 white, 1 color, 1 white])
+// adds all adjacent and equal array elements, returns an array with quantites and colors in order
 function mergeArray(arr, mergedArr) {
-    //console.log(arr)
-    //console.log(arr.length)
     if (arr.length == 0) {
         return;
     }
@@ -155,14 +147,14 @@ function mergeArray(arr, mergedArr) {
     do {
         temp.push(arr.shift());
         i++;
-        //console.log("i=" + i + " temp: " + temp + " arr: " + arr)
     }
     while(temp[0]==arr[0]);
 
-    mergedArr.push(temp.reduce(
+    mergedArr.push(temp.length, temp[0]);
+    /*mergedArr.push(temp.reduce( //older version with prime numbers to identify colors
         (accumulator, currentValue) => accumulator * currentValue,
         0,
-    ));
+    ));*/
     mergeArray(arr, mergedArr);
 };
 
