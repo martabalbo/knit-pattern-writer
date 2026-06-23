@@ -111,7 +111,7 @@ function generatePattern() {
                 currentRow.push("white");
             }
         })
-        if (rowNumber % 2 == 0 && chosenNeedles == "double-pointed") {
+        if (rowNumber % 2 == 0 && chosenNeedles == "straight") {
             currentRow.reverse();
         }
 
