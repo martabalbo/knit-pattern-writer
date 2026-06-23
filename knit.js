@@ -1,3 +1,5 @@
+//import {jsPDF} from "jspdf";
+
 let grid = document.querySelector(".grid");
 
 function toggleColor() {
@@ -157,6 +159,13 @@ function mergeArray(arr, mergedArr) {
     ));*/
     mergeArray(arr, mergedArr);
 };
+
+function printPattern() {
+    const doc = new jsPDF();
+    const pattern = document.querySelector("#pdf").value;
+    console.log(pattern)
+    doc.text()
+}
 
 // add option to use more than one color (up to 5/6?)
 // choose each color (basic colors), name it and draw in the grid
