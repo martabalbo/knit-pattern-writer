@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>knit-pattern-writer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="knit.js" defer></script> 
+    <script src="knit.js" defer></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="header">Knit Pattern Writer</div>
@@ -40,6 +41,7 @@
         </select>
 
         <button onclick="generatePattern()">Generate pattern</button>
+        <button onclick="printPattern()">Print pattern</button>
     </div>
 
     <div id="pdf" class="pattern"></div>
