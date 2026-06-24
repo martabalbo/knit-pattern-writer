@@ -88,6 +88,10 @@ label {
     gap: 5px;
 }
 
+.info {
+    position: relative;
+}
+
 .hidden-content {
     visibility: hidden;
     background-color: white;
@@ -97,12 +101,12 @@ label {
     border-radius: 6px;
     padding: 10px;
     margin: 10px;
-    width: 200px;
+    width: 180px;
 
     position: absolute;
     z-index: 1;
 
-    top: -10px;
+    top: -50px;
     left: 105%;
 }
 
