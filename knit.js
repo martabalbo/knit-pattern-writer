@@ -202,3 +202,7 @@ function printPattern() {
 // add option to use more than one color (up to 5/6?)
 // choose each color (basic colors), name it and draw in the grid
 // generate a pattern with the user's color names
+
+//add infobox for straight needles (fix alignment)
+
+//change cursor after clicking on a color?
