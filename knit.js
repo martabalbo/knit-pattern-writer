@@ -51,7 +51,13 @@ function createGridByColumn() {
 function createGridByRow() {
 
     // remove previous grid, if any
-    removeElement(grid);
+    if (grid.hasChildNodes()) {
+        const rows = document.querySelectorAll(".row");
+
+        Array.from(rows).forEach((child) => {
+            child.parentNode.removeChild(child);
+        });
+    };
 
     // get user choice for the grid dimensions
     const gridWidth = document.getElementById("gridWidth").value;
@@ -76,21 +82,6 @@ function createGridByRow() {
     toggleColor();
 };
 
-function removeElement(element) {
-    if (element.hasChildNodes()) {
-        if (element == grid) {
-            const children = document.querySelectorAll(".row");
-        } else {
-            console
-            const children = document.querySelectorAll(".pattern-row");
-        }
-
-        Array.from(children).forEach((child) => {
-            child.parentNode.removeChild(child);
-        });
-    };
-};
-
 function clearGrid() {
     const squares = document.querySelectorAll(".square");
     Array.from(squares).forEach((square) => {
@@ -103,8 +94,19 @@ function generatePattern() {
     const chosenNeedles = document.getElementById("needles").value;
     const patternBox = document.querySelector(".pattern");
 
+    // remove previous pattern, if any
+    if (patternBox.hasChildNodes()) {
+        const rows = document.querySelectorAll(".pattern-row");
+
+        Array.from(rows).forEach((child) => {
+            child.parentNode.removeChild(child);
+        });
+    };
+
+    // add title to pattern box
     const rowBox = document.createElement("div");
     patternBox.appendChild(rowBox);
+    rowBox.className = "pattern-row"
     rowBox.style.fontWeight = 800;
     rowBox.style.fontSize = "20px";
     rowBox.style.marginBottom = "5px";
@@ -145,9 +147,6 @@ function generatePattern() {
             currentRow.reverse();
         }
 
-        // remove previous pattern, if any
-        removeElement(patternBox);
-
         // generate written pattern
         let mergedRow = []
         mergeArray(currentRow, mergedRow);
@@ -162,12 +161,12 @@ function generatePattern() {
             }
         })
         const rowBox = document.createElement("div");
-        rowBox.className = ".pattern-row";
+        rowBox.className = "pattern-row";
         patternBox.appendChild(rowBox);
         rowBox.textContent = pattern.slice(0, -2);
     })
     //add border
-    pattern.style.border = "1px solid black";
+    patternBox.style.border = "1px solid black";
 }
 
 // adds all adjacent and equal array elements, returns an array with quantites and colors in order
@@ -203,5 +202,3 @@ function printPattern() {
 // add option to use more than one color (up to 5/6?)
 // choose each color (basic colors), name it and draw in the grid
 // generate a pattern with the user's color names
-
-//removeElement fa casino
