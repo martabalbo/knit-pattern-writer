@@ -29,11 +29,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 300px;
+    width: 310px;
 }
 
 .grid-dimensions {
     margin-top: 10px;
+    margin-right: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -80,4 +81,31 @@ label {
 .pattern {
     margin: 30px;
     padding: 10px;
+}
+
+.needle-selection {
+    display: flex;
+    gap: 5px;
+}
+
+.hidden-content {
+    visibility: hidden;
+    background-color: white;
+    color: gray;
+    text-align: justify;
+    border: solid black 1px;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+
+    position: absolute;
+    z-index: 1;
+
+    top: -10px;
+    left: 105%;
+}
+
+.info:hover .hidden-content {
+    visibility: visible;
 }
