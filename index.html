@@ -91,11 +91,19 @@
             </div>
         </div>
             <div class="generate-pattern">
+                <div class="needle-selection">
                 <label for="needles">Select your needles:</label>
-                    <select name="needles" id="needles">
-                        <option value="straight">Straight needles</option>
-                        <option value="circular">Circular needles</option>
-                    </select>
+                <select name="needles" id="needles">
+                    <option value="straight">Straight needles</option>
+                    <option value="circular">Circular needles</option>
+                </select>
+                <div class="info">&#9432;
+                    <span class="hidden-content">
+                        Selecting the straight needles option will cause every second line on the written pattern to be reversed
+                        (to accomodate the need of turning your project every other row).
+                    </span>
+                </div>
+                </div>
 
                 <button onclick="generatePattern()">Generate pattern</button>
                 <button onclick="printPattern()">Print pattern</button>
