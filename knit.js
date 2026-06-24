@@ -203,6 +203,6 @@ function printPattern() {
 // choose each color (basic colors), name it and draw in the grid
 // generate a pattern with the user's color names
 
-//add infobox for straight needles (fix alignment)
-
 //change cursor after clicking on a color?
+
+//add pdf printing
