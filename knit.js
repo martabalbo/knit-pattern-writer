@@ -199,9 +199,8 @@ function printPattern() {
     doc.text()
 }
 
-// add option to use more than one color (up to 5/6?)
-// choose each color (basic colors), name it and draw in the grid
-// generate a pattern with the user's color names
+// add more colors
+// read the grid based on color number, not on the color, then use the color name in the pattern
 
 //change cursor after clicking on a color?
 
