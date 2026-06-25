@@ -34,7 +34,7 @@ body {
 
 .grid-dimensions {
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 70px;
     display: flex;
     justify-content: space-between;
 }
@@ -43,8 +43,12 @@ body {
     margin: 10px;
 }
 
-.color {
-    margin: 0px;
+.color-selection {
+    display: flex;
+}
+
+.color input {
+    margin-top: 10px;
 }
 
 .grid {
@@ -78,6 +82,10 @@ label {
     margin-right: 2px;
 }
 
+input {
+    width: 100px;
+}
+
 .pattern {
     margin: 30px;
     padding: 10px;
@@ -86,6 +94,7 @@ label {
 .needle-selection {
     display: flex;
     gap: 5px;
+    margin-top: 10px;
 }
 
 .info {
