@@ -2,24 +2,22 @@
 
 let grid = document.querySelector(".grid");
 
-function toggleColor(chosenColor) {
+function toggleColor(chosenColor, chosenColorName) {
     const squares = document.querySelectorAll(".square");
 
     Array.from(squares).forEach((square) => {
         square.addEventListener('click', (event) => {
-            if (square.style.backgroundColor == chosenColor) {
+            if (square.style.backgroundColor == chosenColor.value) {
                 square.style.backgroundColor = "white";
             } else {
-                square.style.backgroundColor = chosenColor;
+                square.style.backgroundColor = chosenColor.value;
+                square.setAttribute("id", chosenColorName.value);
             };
         });
     });
 };
 
-function colorIn(chosenColor) {
-    toggleColor(chosenColor.value)
-}
-
+// not used
 function createGridByColumn() {
 
     // remove previous grid, if any
@@ -43,9 +41,6 @@ function createGridByColumn() {
 
     // add border
     //grid.style.border = "1px solid black";
-
-    // add toggle function to color the squares
-    toggleColor();
 };
 
 function createGridByRow() {
@@ -70,6 +65,7 @@ function createGridByRow() {
         for(let j=0; j<gridWidth; j++) {
             const square = document.createElement("div");
             square.className = "square";
+            square.setAttribute("id", "white");
             row.appendChild(square);
         }
         grid.appendChild(row);
@@ -77,9 +73,6 @@ function createGridByRow() {
 
     // add border
     //grid.style.border = "1px solid black";
-
-    // add toggle function to color the squares
-    toggleColor();
 };
 
 function clearGrid() {
@@ -123,25 +116,7 @@ function generatePattern() {
         rowNumber += 1;
 
         Array.from(squares).forEach((square) => {
-            switch(square.style.backgroundColor) {
-                case "rgb(0, 15, 137)":
-                    currentRow.push("blue")
-                    break
-                case "rgb(228, 0, 124)":
-                    currentRow.push("pink")
-                    break
-                case "rgb(139, 0, 139)":
-                    currentRow.push("purple")
-                    break
-                case "rgb(248, 186, 1)":
-                    currentRow.push("yellow")
-                    break
-                case "rgb(124, 220, 35)":
-                    currentRow.push("green")
-                    break
-                default:
-                    currentRow.push("white")
-            }
+            currentRow.push(square.id);
         })
         if (rowNumber % 2 == 0 && chosenNeedles == "straight") {
             currentRow.reverse();
@@ -200,8 +175,9 @@ function printPattern() {
 }
 
 // add more colors
-// read the grid based on color number, not on the color, then use the color name in the pattern
 
 //change cursor after clicking on a color?
 
 //add pdf printing
+
+//add language selection

@@ -32,8 +32,8 @@
         <div class="choose-colors">Choose up to five colors and name them:
             <div class="color-selection">
                 <div class="color" class="color1">
-                    <label for="colorName"></label>
-                    <input type="text" id="colorName" value="color 1">
+                    <label for="color1Name"></label>
+                    <input type="text" id="color1Name" value="color1">
                 </div>
                 <div class="color">
                     <label for="color1"></label>
@@ -44,13 +44,13 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="toggleColor(color1)">Select</button>
+                    <button onclick="toggleColor(color1, color1Name)">Select</button>
                 </div>
             </div>
             <div class="color-selection">
                 <div class="color" class="color2">
-                    <label for="colorName"></label>
-                    <input type="text" id="colorName" value="color 2">
+                    <label for="color2Name"></label>
+                    <input type="text" id="color2Name" value="color2">
                 </div>
                 <div class="color">
                     <label for="color2"></label>
@@ -66,8 +66,8 @@
             </div>
             <div class="color-selection">
                 <div class="color" class="color3">
-                    <label for="color3-name"></label>
-                    <input type="text" id="color3-name" value="color 3">
+                    <label for="color3Name"></label>
+                    <input type="text" id="color3Name" value="color3">
                 </div>
                 <div class="color">
                     <label for="color3"></label>
@@ -78,13 +78,13 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="colorIn(color3)">Select</button>
+                    <button onclick="toggleColor(color3, color3Name)">Select</button>
                 </div>
             </div>
             <div class="color-selection">
                 <div class="color" class="color4">
-                    <label for="color4-name"></label>
-                    <input type="text" id="color4-name" value="color 4">
+                    <label for="color4Name"></label>
+                    <input type="text" id="color4Name" value="color4">
                 </div>
                 <div class="color">
                     <label for="color4"></label>
@@ -95,13 +95,13 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="colorIn(color4)">Select</button>
+                    <button onclick="toggleColor(color4, color4Name)">Select</button>
                 </div>
             </div>
             <div class="color-selection">
                 <div class="color" class="color5">
-                    <label for="color5-name"></label>
-                    <input type="text" id="color5-name" value="color 5">
+                    <label for="color5Name"></label>
+                    <input type="text" id="color5Name" value="color5">
                 </div>
                 <div class="color">
                     <label for="color5"></label>
@@ -112,7 +112,7 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="colorIn(color5)">Select</button>
+                    <button onclick="toggleColor(color5, color5Name)">Select</button>
                 </div>
             </div>
         </div>
