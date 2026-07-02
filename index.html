@@ -32,8 +32,8 @@
         <div class="choose-colors">Choose up to five colors and name them:
             <div class="color-selection">
                 <div class="color" class="color1">
-                    <label for="color1-name"></label>
-                    <input type="text" id="color1-name" value="color 1">
+                    <label for="colorName"></label>
+                    <input type="text" id="colorName" value="color 1">
                 </div>
                 <div class="color">
                     <label for="color1"></label>
@@ -44,13 +44,13 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="colorIn(color1)">Select</button>
+                    <button onclick="toggleColor(color1)">Select</button>
                 </div>
             </div>
             <div class="color-selection">
                 <div class="color" class="color2">
-                    <label for="color2-name"></label>
-                    <input type="text" id="color2-name" value="color 2">
+                    <label for="colorName"></label>
+                    <input type="text" id="colorName" value="color 2">
                 </div>
                 <div class="color">
                     <label for="color2"></label>
@@ -61,7 +61,7 @@
                         <option value="rgb(248, 186, 1)">Yellow</option>
                         <option value="rgb(124, 220, 35)">Green</option>
                     </select>
-                    <button onclick="colorIn(color2)">Select</button>
+                    <button onclick="toggleColor(color2, color2Name)">Select</button>
                 </div>
             </div>
             <div class="color-selection">
@@ -140,6 +140,15 @@
 
         <div id="pdf" class="pattern"></div>
     </div>
+    </div>
+
+    <div class="footer">
+        <div class="github">
+            Source code: <a href="https://github.com/martabalbo/knit-pattern-writer" target="_blank">Github page</a>
+        </div>
+        <div class="linkedin">
+            By: <a href="linkedin.com/in/marta-balbo-5915b329a" target="_blank">Marta-Balbo</a>
+        </div>
     </div>
 </body>
 </html>

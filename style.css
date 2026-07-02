@@ -16,10 +16,23 @@ body {
     flex-direction: column;
 }
 
-.header {
+.header, .footer {
     padding: 10px;
     background-color: rgb(122, 8, 88);
     color: white;
+}
+
+.header {
+    font-size: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: lightgray;
 }
 
 .sidebar {
