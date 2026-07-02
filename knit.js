@@ -174,10 +174,14 @@ function printPattern() {
     doc.text()
 }
 
-// add more colors
-
 //change cursor after clicking on a color?
 
 //add pdf printing
 
 //add language selection
+
+/*<option value="rgb(16, 25, 96)">Blue</option>
+<option value="rgb(228, 0, 124)">Pink</option>
+<option value="rgb(139, 0, 139)">Purple</option>
+<option value="rgb(248, 186, 1)">Yellow</option>
+<option value="rgb(124, 220, 35)">Green</option>*/

@@ -42,7 +42,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 310px;
+    width: 330px;
 }
 
 .grid-dimensions {
