@@ -1,5 +1,5 @@
 # knit-pattern-writer
-Fill in a grid and get a written pattern for your double knitting project!
+Fill in a grid and get a written pattern for your double knitting and colorwork projects!
 
 I'm trying to create a website where knitters can fill in a grid and get a written pattern for their double knitting or colorwork projects.
 
