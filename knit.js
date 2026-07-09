@@ -9,6 +9,7 @@ function toggleColor(chosenColor, chosenColorName) {
         square.addEventListener('click', (event) => {
             if (square.style.backgroundColor == chosenColor.value) {
                 square.style.backgroundColor = "white";
+                square.setAttribute("id", "white");
             } else {
                 square.style.backgroundColor = chosenColor.value;
                 square.setAttribute("id", chosenColorName.value);
@@ -16,6 +17,13 @@ function toggleColor(chosenColor, chosenColorName) {
         });
     });
 };
+
+//used to change button colors, changes it permanently
+function selectColor(color, id) {
+    console.log(color.value)
+    const button = document.getElementById(id);
+    button.style.backgroundColor = color.value;
+}
 
 // not used
 function createGridByColumn() {
@@ -176,9 +184,11 @@ function printPattern() {
 
 //change cursor after clicking on a color?
 
-//add pdf printing
+//add pdf printing (with type of needles selected, color used? and maybe the grid image and a title)
 
 //add language selection
+
+//add grid background color selection (when creating grid, black or white)
 
 /*<option value="rgb(16, 25, 96)">Blue</option>
 <option value="rgb(228, 0, 124)">Pink</option>
